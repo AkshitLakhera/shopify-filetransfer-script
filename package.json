@@ -1,0 +1,19 @@
+{
+  "name": "shopify-file-transfer",
+  "version": "1.0.0",
+  "description": "- Create a new Node.js project - Install the necessary packages, such as `ftp` for FTP file operations and the Shopify API client library (e.g., `shopify-api-node`)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@shopify/shopify-api": "^11.6.0",
+    "dotenv": "^16.4.5",
+    "ftp": "^0.3.10",
+    "node-cron": "^3.0.3",
+    "winston": "^3.17.0"
+  }
+}
