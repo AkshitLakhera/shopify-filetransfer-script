@@ -1,4 +1,4 @@
-const Shopify = require('@shopify/shopify-api');
+import Shopify from "@shopify/shopify-api"
 class ShopifyService {
     constructor () {
         this.client = new Shopify ({
@@ -41,6 +41,4 @@ class ShopifyService {
         });
     }
 }
-module.exports = {
-    ShopifyService
-};
+export default ShopifyService;

@@ -1,9 +1,10 @@
-require('dotenv').config();
-const  { FTPService} =require("../../src/services/ftp.service");
-const { ShopifyService} = require('../../src/services/shopify.service');
-const { CheckpointManager } = require('../../src/utils/checkpoint');
-const { withRetry } = require('../../src/utils/retry');
-const logger = require('../../logs/logger');
+import dotenv from 'dotenv';
+dotenv.config();  // Load environment variables from the .env file
+import  FTPService  from "../../src/services/ftp.service";
+import  ShopifyService  from '../../src/services/shopify.service';
+import  CheckpointManager  from '../../src/utils/checkpoint';
+import  withRetry  from '../../src/utils/retry';
+import logger from '../../logs/logger';
 class TransferService  {
     constructor() {
         this.ftpService = new FTPService();
@@ -57,3 +58,4 @@ class TransferService  {
         }
     }
 }
+export default  TransferService;

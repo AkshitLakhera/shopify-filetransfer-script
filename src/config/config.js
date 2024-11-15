@@ -1,6 +1,6 @@
-require('dotenv').config();
-
-module.exports = {
+import dotenv from 'dotenv';
+dotenv.config();
+const config = {
     ftp: {
         host: process.env.FTP_HOST,
         user: process.env.FTP_USER,
@@ -19,3 +19,4 @@ module.exports = {
         randomize: true
     }
 };
+export { config };

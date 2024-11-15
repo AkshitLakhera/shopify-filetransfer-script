@@ -1,7 +1,7 @@
-const ftp = require('ftp');
-const logger = require('../../logs/logger');
-const connection = require('ftp');
-const { stream } = require('winston');
+import ftp from 'ftp';
+import loggers from "../../logs/logger"
+// const connection = require('ftp');
+// const { stream } = require('winston');
 
 class FTPServices {
     constructor () {
@@ -48,4 +48,4 @@ async listFiles(directory = '/') {
     });
 }
 }
-module.exports= {FTPServices};
+export default FTPServices;

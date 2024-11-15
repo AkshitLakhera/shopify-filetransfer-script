@@ -1,6 +1,6 @@
-const retry = require('retry');
-const logger=require('../../logs/logger');
-const config = require('../config/config')
+import retry from 'retry';
+import logger from '../../logs/logger';
+import {config} from '../config/config';
 async function withRetry (operation,options = {}) {
     const retryOperation = retry.operation({
         //using spread operators to  get all property
@@ -22,3 +22,4 @@ async function withRetry (operation,options = {}) {
         });
     });
 }
+export default withRetry;

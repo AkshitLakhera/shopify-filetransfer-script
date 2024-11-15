@@ -1,6 +1,7 @@
-require('dotenv').config();
-const { TransferService } = require('../src/services/transfer.service');
-const logger = require('../logs/logger');
+import dotenv from 'dotenv';
+dotenv.config(); 
+import TransferService from './services/transfer.service';
+import logger from '../logs/logger';
 async function main() {
     const transferService = new TransferService();
     try {
