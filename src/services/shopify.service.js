@@ -1,9 +1,9 @@
-const { Shopify } = require ('@shopify/shopify-api');
+const Shopify = require('@shopify/shopify-api');
 class ShopifyService {
     constructor () {
         this.client = new Shopify ({
             shopName: process.env.SHOPIFY_SHOP_NAME,
-            accesstoken : process.env.SHOPIFY_ACCESS_TOKEN,
+            accessToken : process.env.SHOPIFY_ACCESS_TOKEN,
         });
     }
     async uploadfile (fileStream,filename) {
