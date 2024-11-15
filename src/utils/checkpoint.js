@@ -1,6 +1,5 @@
 const fs = require('fs').promises;
 const path = require('path');
-
 class CheckpointManager {
     constructor() {
         this.checkpointFile = path.join(__dirname, '../checkpoints', 'transfer_checkpoint.json');

@@ -1,37 +1,15 @@
-//Load env variable     
 require('dotenv').config();
-const  { FTPService} =require("./services/ftp.service");
-const { ShopifyService} = require('./services/shopify.service');
-const { CheckpointManager } = require('./utils/checkpoint');
+const { TransferService } = require('../src/services/transfer.service');
+const logger = require('../logs/logger');
 async function main() {
-    const ftpService = new FTPService();
-    const shopifyService = new ShopifyService();
-    const checkpoint = new CheckpointManager();
-    await ftpService.connect();
-    //After connecting with servere it  will list the files
-    const files = await ftpService.listfiles();
-    console.log(files);
-    for (const file of files) {
-        const filename = file.name;
-
-        //Check if file has already been transfered 
-        //Process
-        const progress = await checkpoint.loadCheckpoint();
-        if(progress[filename]?.status === 'completed'){
-            console.log(`Skipping ${filename} - already transfered `);
-            continue ;
-        }
-        try {
-            const fileStream = await ftpService.getFileStream(filename);
-            await shopifyService.uploadfile(fileStream,filename);
-            await checkpoint.saveProgress(filename,'completed');
-            console.log(`Transfered ${filename} successfully`);
-        } catch(error) {
-            await checkpoint.saveProgress(filename,'failed');
-            console.log(`Error transferring ${filename}:`,error)
-        }
+    const transferService = new TransferService();
+    try {
+        logger.info('Starting file transfer process');
+        await transferService.processFiles();
+        logger.info('File transfer process completed');
+    } catch (error) {
+        logger.error('File transfer process failed:', error);
+        process.exit(1);
     }
-    consolelog('File Transfer process completed')
-
 }
 main();
