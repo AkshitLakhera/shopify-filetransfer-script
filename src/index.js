@@ -1,7 +1,6 @@
-//Load env variable 
+//Load env variable     
 require('dotenv').config();
-const  { FTPService} =
-require("./services/ftp.service");
+const  { FTPService} =require("./services/ftp.service");
 const { ShopifyService} = require('./services/shopify.service');
 const { CheckpointManager } = require('./utils/checkpoint');
 async function main() {
@@ -16,6 +15,7 @@ async function main() {
         const filename = file.name;
 
         //Check if file has already been transfered 
+        //Process
         const progress = await checkpoint.loadCheckpoint();
         if(progress[filename]?.status === 'completed'){
             console.log(`Skipping ${filename} - already transfered `);
