@@ -1,5 +1,5 @@
 const ftp = require('ftp');
-const logger = require('../utils/');
+const logger = require('../../logs/logger');
 const connection = require('ftp');
 const { stream } = require('winston');
 

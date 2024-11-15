@@ -51,7 +51,7 @@ class TransferService  {
                     // Continue with next file
                 }
             }
-        } catch (error) {
+        }   catch (error) {
             logger.error('Error in process files:', error);
             throw error;
         }
