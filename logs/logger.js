@@ -1,6 +1,9 @@
-const winston = require('winston');
-const path = require('path');
+import winston from 'winston';
+import path from 'path';
+import { fileURLToPath } from 'url';
 //creating logger isntance
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const logger = winston.createLogger({
     //setting log level to info
     level:'info',
@@ -9,7 +12,7 @@ const logger = winston.createLogger({
         winston.format.timestamp(),
         //Formating logs as JSON
         winston.format.json()
-    ),
+    ),  
     //Now writing transport,place where all the logs are saved.
     transports : [
         //displaying logs in  terminal
@@ -29,3 +32,4 @@ const logger = winston.createLogger({
         })
     ]
 });
+export default logger;

@@ -9,11 +9,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "@shopify/shopify-api": "^11.6.0",
+    "basic-ftp": "^5.0.5",
     "dotenv": "^16.4.5",
     "ftp": "^0.3.10",
     "node-cron": "^3.0.3",
+    "retry": "^0.13.1",
     "winston": "^3.17.0"
   }
 }
