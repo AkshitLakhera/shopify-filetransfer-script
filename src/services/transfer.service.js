@@ -1,10 +1,10 @@
 import dotenv from 'dotenv';
 dotenv.config();  // Load environment variables from the .env file
-import  FTPService  from "../../src/services/ftp.service";
-import  ShopifyService  from '../../src/services/shopify.service';
-import  CheckpointManager  from '../../src/utils/checkpoint';
-import  withRetry  from '../../src/utils/retry';
-import logger from '../../logs/logger';
+import  FTPService  from "../../src/services/ftp.service.js";
+import  ShopifyService  from '../../src/services/shopify.service.js';
+import  CheckpointManager  from '../../src/utils/checkpoint.js';
+import  withRetry  from '../../src/utils/retry.js';
+import logger from '../../logs/logger.js';
 class TransferService  {
     constructor() {
         this.ftpService = new FTPService();

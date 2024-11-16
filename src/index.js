@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config(); 
-import TransferService from './services/transfer.service';
-import logger from '../logs/logger';
+import TransferService from '../src/services/transfer.service.js';
+import logger from '../logs/logger.js';
 async function main() {
     const transferService = new TransferService();
     try {

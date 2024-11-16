@@ -1,11 +1,8 @@
 import ftp from 'ftp';
-import loggers from "../../logs/logger"
-// const connection = require('ftp');
-// const { stream } = require('winston');
-
+import { Client } from 'basic-ftp';
 class FTPServices {
     constructor () {
-        this.client = new ftp.Client();
+        this.client = new Client();
     }
 
 //connecting with ftp server

@@ -1,7 +1,8 @@
-import Shopify from "@shopify/shopify-api"
+import '@shopify/shopify-api/adapters/node';
+import { shopifyApi } from "@shopify/shopify-api";
 class ShopifyService {
     constructor () {
-        this.client = new Shopify ({
+        this.client = shopifyApi ({
             shopName: process.env.SHOPIFY_SHOP_NAME,
             accessToken : process.env.SHOPIFY_ACCESS_TOKEN,
         });
