@@ -17,8 +17,3 @@
 4. **Error handling and logging**:
    - Implement robust error handling to gracefully handle any issues that may arise during the file transfer process
    - Log the progress, errors, and any other relevant information for debugging and monitoring purposes
-5. **Automate the script execution**:
-   - Set up a scheduled task or a cron job to run the script periodically (e.g., daily, weekly) to keep the Shopify store's file section up-to-date
-6. **Test and refine the script**:
-   - Thoroughly test the script with various edge cases, such as network failures, server downtime, and large file transfers
-   - Optimize the script's performance and reliability based on the testing results

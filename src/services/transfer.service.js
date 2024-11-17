@@ -32,12 +32,14 @@ class TransferService  {
     async processFiles() {
         try {
             await this.ftpService.connect();
+            //Listing all the pdf files
             const files = await this.ftpService.listFiles();
             const pdfFiles = files.filter(file => file.name.toLowerCase().endsWith('.pdf'));
             
             logger.info(`Found ${pdfFiles.length} PDF files to process`);
-            
+        
             for (const file of pdfFiles) {
+                //Loading checkpoint : current status  of file.
                 const checkpoint = await this.checkpointManager.loadCheckpoint();
                 
                 if (checkpoint[file.name]?.status === 'completed') {

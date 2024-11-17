@@ -1,6 +1,7 @@
 import retry from 'retry';
 import logger from '../../logs/logger.js';
 import {config} from '../config/config.js';
+//Logic to retry uploading if the prcoess got failed.
 async function withRetry (operation,options = {}) {
     const retryOperation = retry.operation({
         //using spread operators to  get all property

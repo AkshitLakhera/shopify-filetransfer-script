@@ -1,5 +1,5 @@
 import '@shopify/shopify-api/adapters/node';
-import { shopifyApi } from "@shopify/shopify-api";
+import { shopifyApi } from "@shopify/shopify-api";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 class ShopifyService {
     constructor () {
         this.client = shopifyApi ({
@@ -18,6 +18,7 @@ class ShopifyService {
           }
         
         }`;
+        //Changing file data coming into to buffer by calling method
         const fileData = await this.streamToBuffer(fileStream);
         return this.client.graphql({
             query:mutation,
